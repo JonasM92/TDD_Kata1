@@ -1,6 +1,5 @@
 package be.vdab.calculator;
 
-import be.vdab.calculator.Calculator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -22,14 +21,24 @@ public class CalculatorTest {
     }
 
     @Test
-    public void additionWithMultipleValuesReturnsSumTest() {
+    public void additionWithTwoValuesReturnsSumTest() {
         assertEquals(4,Calculator.add("2,2"));
     }
-//
-//    @Test
-//    public void getValuesCorrectlyRemovesWhitespaceTest() {
-//        assertEquals("",Calculator.getValues(" \n\t"));
-//    }
+
+    @Test
+    public void additionWithMultipleValuesReturnsSumTest() {
+        assertEquals(55,Calculator.add("1,2,3,4,5,6,7,8,9,10"));
+    }
+
+    @Test
+    public void getValuesCorrectlyReplacesWhitespaceTest() {
+        assertEquals(",,,",Calculator.replaceWhitespace(" \n\t"));
+    }
+
+    @Test
+    public void stringWithWhitespaceAndNumbersReturnsCorrectSum() {
+        assertEquals(15, Calculator.add("1 2\n3\t4,5"));
+    }
 
 
 }
