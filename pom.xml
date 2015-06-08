@@ -8,6 +8,24 @@
     <artifactId>TDD_Kata1</artifactId>
     <version>0.0.1</version>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <targetClasses>
+                        <param>com.realdolmen.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.realdolmen.*</param>
+                    </targetTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
